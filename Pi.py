@@ -1,4 +1,5 @@
 #Fibonacci
+# JA: Where is pi?
 
 def fib(n):
     print("This is a way to show the fibonacci sequence.")
