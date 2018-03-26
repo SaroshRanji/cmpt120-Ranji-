@@ -2,6 +2,9 @@
 # Sarosh Ranji
 # 19-03-2018
 ###
+
+# There is a single commit
+
 def showIntro():
     print("Welcome to the Arithmetic Engine!")
     print("=================================\n")
@@ -31,7 +34,7 @@ def doLoop():
             result = num1 * num2
         elif cmd == "div":
             result = num1 // num2
-        elif cmd == "quit":
+        elif cmd == "quit": # You should put this at the beginning so you don't ask for the numbers
             result = print("Please come back again soon!")
             break
         print("The result is " + str(result) + ".\n")
