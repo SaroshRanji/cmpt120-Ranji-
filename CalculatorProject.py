@@ -2,6 +2,7 @@
 from graphics import *
 from button import Button
 
+# JA: This is not running
 
 def createCalculatorGui():
     win = GraphWin("calculator")
@@ -17,7 +18,7 @@ bSpecs = [ (2, 1, '0'), (3,1,'.'),
 
 buttons = createButtons(bSpecs, win)
 display = createDisplay(win)
-return buttons, display, win
+#return buttons, display, win
 
 def createButtons(bSpecs, win):
     buttons = []
@@ -53,8 +54,8 @@ def processButton(key, display):
     elif key == "C":
         display.setText("")
     elif key == "==":
-        try:
-            result = "ERROR"
+        #try:
+        result = "ERROR"
         display.setText(result)
     else:
         display.setText(text + key)
