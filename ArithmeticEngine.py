@@ -2,6 +2,8 @@
 # Sarosh Ranji
 # 19-03-2018
 ###
+# There is a single commit
+
 def showIntro():
     print("Welcome to the Arithmetic Engine!")
     print("=================================\n")
@@ -13,14 +15,14 @@ def showOutro():
 
 def doLoop():
     while True:
-        while True:
-            cmd = input("What computation do you want to perform? ").lower()
-            if cmd == "add" or cmd == "sub" or cmd == "mult" or cmd == "div":
-                break
-            elif cmd == quit def showOutro
-            else:
-                print(cmd,"is not a valid command.")
-             #   203 747 0144 jason
+        cmd = input("What computation do you want to perform? ").lower()
+
+        if cmd != "add" and cmd != "sub" and cmd != "mult" and cmd != "div" and cmd != "quit":
+            break
+        else:
+            print(cmd,"is not a valid command.")
+        if cmd == quit:
+            break
         num1 = int(input("Enter the first number: "))
         num2 = int(input("Enter the second number: "))
         if cmd == "add":
@@ -31,7 +33,8 @@ def doLoop():
             result = num1 * num2
         elif cmd == "div":
             result = num1 // num2
-        elif cmd == "quit":
+        elif cmd == "quit": # You should put this at the beginning so you don't ask for the numbers
+            result = print("Please come back again soon!")
             break
         print("The result is " + str(result) + ".\n")
 

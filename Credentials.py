@@ -2,6 +2,9 @@
 # Lab #5 – Working with Strings and Functions
 # Author: Your Name Here
 # Created: YYYY-MM-DD
+
+# JA: You were supposed to create functions for the different parts
+
 import math
 def main():
 # get user's first and last names
