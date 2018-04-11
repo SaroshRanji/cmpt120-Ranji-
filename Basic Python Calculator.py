@@ -39,13 +39,16 @@ def createDisplay(win):
     return text
 
 def getButtonPressed(buttons, calc):
+    print("got here")
     while True:
+        print("got there")
         p = calc.getMouse()
         for b in buttons:
-                if b.clicked(p):
-                    return b.getLabel()
+            if b.clicked(p):
+                return b.getLabel()
 
 def processButton(key, display):
+    print("got to dis")
     text = display.getText()
     if key == "<-":
         display.setText(text[:-1])
@@ -64,6 +67,6 @@ def main():
     buttons, display, calc = createCalculatorGui()
     while True:
         key = getButtonPressed(buttons, calc)
- #       processButton(key)
+        processButton(key, display)
 
 main()
