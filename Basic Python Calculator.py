@@ -9,15 +9,14 @@ def createCalculatorGui():
     win.setBackground("slategray")
 
 
+    bSpecs = [ (2, 1, '0'), (3,1,'.'),
+               (1,2,'1'),   (2,2,'2'), (3,2,'3'), (4,2,'+'), (5,2,'-'),
+               (1,3,'4'),   (2,3,'5'), (3,3,'6'), (4,3,'*'), (5,3,'/'),
+               (1,4,'7'),   (2,4,'8'), (3,4,'9'), (4,4,'<-'),(5,4,'C')]
 
-bSpecs = [ (2, 1, '0'), (3,1,'.'),
-           (1,2,'1'),   (2,2,'2'), (3,2,'3'), (4,2,'+'), (5,2,'-'),
-           (1,3,'4'),   (2,3,'5'), (3,3,'6'), (4,3,'*'), (5,3,'/'),
-           (1,4,'7'),   (2,4,'8'), (3,4,'9'), (4,4,'<-'),(5,4,'C')]
-
-buttons = createButtons(bSpecs, win)
-display = createDisplay(win)
-return buttons, display, win
+    buttons = createButtons(bSpecs, win)
+    display = createDisplay(win)
+    return buttons, display, win
 
 def createButtons(bSpecs, win):
     buttons = []
@@ -53,8 +52,7 @@ def processButton(key, display):
     elif key == "C":
         display.setText("")
     elif key == "==":
-        try:
-            result = "ERROR"
+        result = "ERROR"
         display.setText(result)
     else:
         display.setText(text + key)
