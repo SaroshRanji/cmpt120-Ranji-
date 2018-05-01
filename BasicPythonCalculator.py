@@ -39,9 +39,7 @@ def createDisplay(win):
     return text
 
 def getButtonPressed(buttons, calc):
-    print("got here")
     while True:
-        print("got there")
         p = calc.getMouse()
         for b in buttons:
             if b.clicked(p):
@@ -57,8 +55,50 @@ def processButton(key, display):
     elif key == "==":
         result = "ERROR"
         display.setText(result)
+    elif key == "=":
+        evaluateButton(display)
+        
+       
+        
     else:
         display.setText(text + key)
+
+
+def evaluateButton(display):
+    text = display.getText()
+    #print(len(text))
+    str1 = ""
+    str2 = ""
+    operator = ""
+    for i in range(0,len(text)):
+        #print(text[i])
+        if (text[i] == "+" or text[i] == "-" or text[i] == "*" or text[i] == "/"):
+            operator = text[i]
+        else:
+            if operator == "":
+                str1 = str1 + (text[i])
+            else:
+                str2 = str2 + (text[i])
+
+    int1 = int(str1)
+    int2 = int(str2)
+    result = 0
+    if operator == "+":
+        result = int1 + int2
+    elif operator == "-":
+        result = int1 - int2
+    elif operator == "*":
+        result = int1 * int2
+    elif operator == "/":
+        result = int1 / int2
+
+    print(str1)
+    print(operator)
+    print(str2)
+    print(result)
+        
+    
+    
             
         
     
