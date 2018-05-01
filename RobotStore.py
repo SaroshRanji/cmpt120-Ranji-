@@ -1,5 +1,7 @@
 #RobotStore.py
 
+#JA: You were supposed to create a Product class
+
 productNames = [ "Ultrasonic range finder"
                 , "Servo motor"
                 , "Servo controller"

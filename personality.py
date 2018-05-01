@@ -18,6 +18,7 @@ def getInteraction():
 # choice - a user interaction
 # Returns: an emotion
 def lookupEmotion(personality, choice):
+    # JA: This could be done simpler with a 2-dimensional array
     if choice == 1:
         #Happy and surprised plus 1
         personality[0].append(personality[0][len(personality[0])-1]+1) #Happy
