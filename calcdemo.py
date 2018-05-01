@@ -40,9 +40,9 @@ def main():
                 button2.setFill('navy')
                 button3.setFIll('lightblue')
                 if inside(clicked, button3):
-                displayString = displayString + '7';
+                    displayString = displayString + '7';
                 text.undraw()
-                text = Text(Point(300 - len(displayString) * 10, 50), displayString)jklj
+                text = Text(Point(300 - len(displayString) * 10, 50), displayString)
                     button1.setFill('lightblue')
                     button2.setFill('lightblue')
                     button3.setFill('navy')

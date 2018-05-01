@@ -9,6 +9,20 @@ productNames = [ "Ultrasonic range finder"
                 ]
 productPrices = [ 2.50, 14.99, 44.95, 34.95, 149.99, 8.99 ]
 productQuantities = [ 4, 10, 5, 7, 2, 8 ]
+
+class Product:
+    def __init__(self, name, price, quantity):
+        self.name = name
+        self.price = price
+        self.quantity = quantity
+
+    def isInStock(self, count):
+        return count <= self.quantity
+    def cost(self, count):
+        return cost * self.quantity
+    def buy(self, count):
+        self.quantity = self.quantity - count
+
 def printStock():
  print()
  print("Available Products")
