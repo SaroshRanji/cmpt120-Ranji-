@@ -24,7 +24,7 @@ class TennisMatch:
 
     def isOver(self):
         return self.playerA.getScore() == 60 and self.playerB.getScore() < 40 \
-            or (self.playerA.getScore() < 40 and self.playerB.getScore() == 60) \
+            or (self.playerA.getScore() < 40 and self.playerB.getScore() == 60)\ \
             or (self.playerB.getScore() == 40 and self.playerA.getScore() == 40)
 
     def isMatchOver(self, probA, probB):

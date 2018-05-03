@@ -50,13 +50,14 @@ def processButton(key, display):
     text = display.getText()
     if key == "<-":
         display.setText(text[:-1])
-    elif key == "C":
-        display.setText("")
+    elif key == "C":  
+        display.setText("") #use this to clear the numbers before getting the end result
     elif key == "==":
         result = "ERROR"
         display.setText(result)
     elif key == "=":
         evaluateButton(display)
+        
         
        
         
@@ -85,12 +86,18 @@ def evaluateButton(display):
     result = 0
     if operator == "+":
         result = int1 + int2
+        display.setText(result)
+
     elif operator == "-":
         result = int1 - int2
+        display.setText(result)
+
     elif operator == "*":
         result = int1 * int2
+        display.setText(result)
     elif operator == "/":
         result = int1 / int2
+        display.setText(result)
 
     print(str1)
     print(operator)

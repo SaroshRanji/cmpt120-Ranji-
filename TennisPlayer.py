@@ -14,7 +14,12 @@ class Player:
 
     def incScore(self):
         # Add a point to this player's score
-        self.score = self.score + 1
+        if self.score == 0:
+            self.score = 15
+        elif self.score == 15:
+            self.score = 30
+        elif self.score == 30:
+            self.score = 40
 
     def getScore(self):
         if self.score == 1:
