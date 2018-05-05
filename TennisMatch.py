@@ -1,20 +1,31 @@
-# rballgame.py
-from TennisPlayer import Player
+# TennisMatch.py
+from player import Player
 
-class TennisMatch:
+class RBallGame:
     def __init__(self, probA, probB):
         self.playerA = Player(probA)
         self.playerB = Player(probB)
         self.server = self.playerA
+        self.receiving = self.player.B
 
     def play(self):
         while not self.isOver():
             if self.server.winsServe():
-                self.server.incScore()
-            else:
-                self.changeServer()
-
-        
+                if self.serving.getScore() == 40 and self.recieving.getScore() < 40:
+                    self.serving.incGame()
+                    self.serving.resetScore()
+                    self.recieving.resetScore()
+                elif self.serving.getScore() == 40 and self.recieving.getScore() == 40:
+                    if self.recieving.hasAdvantage():
+                        self.reveiving.setAdvantage(False)
+                    elif self.serving.hasAdvantage():
+                        self.serving.incGame()
+                        self.serving.resetScore()
+                        self.recieving.resetScore()
+                    else:
+                        self.serving.setAdvantage(True)
+                else:
+                    self.serving.incScore()
 
     def getScores(self):
         if self.playerA.getScore() == 60 and self.playerB.getScore() == 60:
@@ -24,14 +35,8 @@ class TennisMatch:
 
     def isOver(self):
         return self.playerA.getScore() == 60 and self.playerB.getScore() < 40 \
-            or (self.playerA.getScore() < 40 and self.playerB.getScore() == 60)\ \
+            or (self.playerA.getScore() < 40 and self.playerB.getScore() == 60) \
             or (self.playerB.getScore() == 40 and self.playerA.getScore() == 40)
-
-    def isMatchOver(self, probA, probB):
-        while self.playerA.getSetsWon() < 2 and self.playerB.getSetsWon() < 2:
-            if self.playerA.getGamesWon() < 6 and self.playerB.getGamesWon() < 6:
-                theGame = TennisMatch(probA, probB)
-                theGame.play()
 
     def changeServer(self):
         if self.server == self.playerA:
